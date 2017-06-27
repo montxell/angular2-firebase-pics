@@ -3,16 +3,26 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { APP_ROUTING } from './app.routes';
+
 import { AppComponent } from './app.component';
+import { UploadComponent } from './components/upload/upload.component';
+import { PicsComponent } from './components/pics/pics.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UploadComponent,
+    PicsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    APP_ROUTING
   ],
   providers: [],
   bootstrap: [AppComponent]
