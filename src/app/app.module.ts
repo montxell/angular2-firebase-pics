@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { AngularFireModule } from 'angularfire2';
+
+import { ENVIRONMENT } from '../environments/environment';
 
 import { APP_ROUTING } from './app.routes';
 
@@ -22,7 +25,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    APP_ROUTING
+    APP_ROUTING,
+    AngularFireModule.initializeApp(ENVIRONMENT.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]
