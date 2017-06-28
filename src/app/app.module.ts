@@ -8,6 +8,8 @@ import { environment } from '../environments/environment';
 
 import { APP_ROUTING } from './app.routes';
 
+import { UploadImagesService } from './services/upload-images.service';
+
 import { AppComponent } from './app.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { PicsComponent } from './components/pics/pics.component';
@@ -28,7 +30,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     APP_ROUTING,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [
+    UploadImagesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
