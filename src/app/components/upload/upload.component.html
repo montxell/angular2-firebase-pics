@@ -23,7 +23,7 @@
     <button type="button"
             class="btn btn-success"
             (click)="uploadImagesToFirebase"
-            [disabled]="">
+            [disabled]="files.length == 0 || !isAllowedToUpload">
       Upload to firebase
     </button>
 
@@ -34,7 +34,7 @@
     </button>
 
 
-    <table class="table">
+    <table class="table" *ngIf="files.length > 0">
 
       <thead class="thead-inverse">
         <tr>
