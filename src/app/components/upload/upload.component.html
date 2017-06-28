@@ -1,3 +1,59 @@
-<p>
-  upload works!
-</p>
+
+<div class="row">
+
+  <div class="col-md-4">
+
+    <h3>Select files</h3>
+
+    <div
+         class="well drop-zone">
+
+         <h4>Drop the files here</h4>
+         <img src="/assets/img/drop-images.png">
+
+    </div>
+
+  </div>
+
+
+  <div class="col-md-8 uploading-section">
+
+    <h3>Upload files</h3>
+
+    <button type="button"
+            class="btn btn-success"
+            (click)="uploadImagesToFirebase"
+            [disabled]="">
+      Upload to firebase
+    </button>
+
+    <button type="button"
+            class="btn btn-danger"
+            (click)="cleanFiles()">
+      Clean files
+    </button>
+
+
+    <table class="table">
+
+      <thead class="thead-inverse">
+        <tr>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Progress</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
