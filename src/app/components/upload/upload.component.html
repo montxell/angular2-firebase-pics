@@ -5,7 +5,9 @@
 
     <h3>Select files</h3>
 
-    <div
+    <div appNgDropFiles
+         [ngClass]="{ 'file-over': isOnDropZone }"
+         (fileOn)="fileOnDropZone($event)"
          class="well drop-zone">
 
          <h4>Drop the files here</h4>

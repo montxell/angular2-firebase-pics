@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { UploadComponent } from './components/upload/upload.component';
 import { PicsComponent } from './components/pics/pics.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     AppComponent,
     UploadComponent,
     PicsComponent,
-    NavbarComponent
+    NavbarComponent,
+    NgDropFilesDirective
   ],
   imports: [
     BrowserModule,

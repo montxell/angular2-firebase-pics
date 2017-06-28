@@ -23,6 +23,12 @@ export class UploadComponent implements OnInit {
   }
 
 
+  fileOnDropZone( event: boolean ) {
+      console.log(event);
+      this.isOnDropZone = event;
+  }
+
+
   uploadImagesToFirebase() {
     this.isAllowedToUpload = false;
     this._uploadImages.uploadImagesToFirebase( this.files );
