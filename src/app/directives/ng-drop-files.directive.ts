@@ -51,6 +51,8 @@ export class NgDropFilesDirective {
 
       this._addFiles( transfer.files );
 
+      this.fileOn.emit( false );
+
       this._preventAndStop(event);
 
   }
@@ -63,7 +65,22 @@ export class NgDropFilesDirective {
 
 
   private _addFiles( filesList: FileList ) {
-    console.log( filesList );
+    // console.log( filesList );
+
+    for (let property in Object.getOwnPropertyNames( filesList ) ) {
+
+      let registryTemp = filesList[property];
+
+      if ( this._fileCanBeUploaded ( registryTemp ) ) {
+
+        let newFile = new FileItem( registryTemp );
+        this.files.push( newFile );
+
+      }
+    }
+
+    console.log(this.files);
+
   }
 
 
