@@ -8,6 +8,7 @@
     <div appNgDropFiles
          [ngClass]="{ 'file-over': isOnDropZone }"
          (fileOn)="fileOnDropZone($event)"
+         [files]="files"
          class="well drop-zone">
 
          <h4>Drop the files here</h4>
@@ -47,10 +48,20 @@
       </thead>
 
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+        <tr *ngFor="let file of files">
+          <td [ngClass]="{ 'text-green': file.isUploading }">
+            <strong> {{ file.fileName }} </strong>
+          </td>
+          <td>
+            {{ file.file.size / 1024 / 1024 | number:'.2' }} MB
+          </td>
+          <td>
+
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': file.progress + '%' }"></div>
+            </div>
+
+          </td>
         </tr>
       </tbody>
 

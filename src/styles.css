@@ -23,6 +23,11 @@
 	margin-top: 30px;
 }
 
+.text-green {
+  color: green;
+}
+
+
 
 @media (max-width: 768px) {
 
